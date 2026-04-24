@@ -121,11 +121,11 @@ export function Hero() {
 
         <div className="hero-visual reveal">
           <div
+            className="hero-card"
             style={{
               background: 'linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,120,110,0.05))',
               border: '1px solid var(--border)',
               borderRadius: 16,
-              overflow: 'hidden',
               aspectRatio: '4 / 5',
               maxHeight: 580,
               position: 'relative',
@@ -134,6 +134,7 @@ export function Hero() {
             }}
           >
             <div
+              className="hero-card-img"
               style={{
                 position: 'absolute',
                 inset: 0,
@@ -144,6 +145,7 @@ export function Hero() {
               }}
             >
               <div
+                className="avatar-art"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -179,6 +181,7 @@ export function Hero() {
                   }}
                 />
                 <div
+                  className="avatar-initials"
                   style={{
                     fontFamily:
                       "var(--font-serif), ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -199,6 +202,7 @@ export function Hero() {
             </div>
 
             <div
+              className="hero-card-overlay"
               style={{
                 position: 'relative',
                 zIndex: 2,
@@ -208,6 +212,7 @@ export function Hero() {
               }}
             >
               <div
+                className="instagram-badge"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

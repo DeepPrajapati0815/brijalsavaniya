@@ -1880,6 +1880,20 @@ footer {
   .services-grid {
     grid-template-columns: 1fr;
   }
+  .hero-social-proof {
+    flex-wrap: wrap;
+    gap: 1.25rem 1.5rem;
+  }
+  .proof-item {
+    min-width: 140px;
+  }
+  .hero-card {
+    max-height: 520px;
+  }
+  .about-accent-box {
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
   .content-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1910,6 +1924,23 @@ footer {
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+  .hero-card {
+    aspect-ratio: 1/1.2;
+    max-height: 440px;
+  }
+  .hero-card-overlay {
+    padding: 1.1rem;
+  }
+  .instagram-badge {
+    font-size: 0.75rem;
+    padding: 0.55rem 0.85rem;
+  }
+  .about-accent-box {
+    padding: 1.1rem 1.4rem;
+  }
+  .about-frame-initials {
+    font-size: 6.2rem;
   }
   .content-grid {
     grid-template-columns: 1fr;
