@@ -1865,11 +1865,12 @@ footer {
   }
   .about-inner {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
   .about-visual {
     display: block;
-    max-width: 520px;
-    margin: 0 auto 1.5rem;
+    width: 100%;
+    margin: 0;
   }
   .contact-inner {
     grid-template-columns: 1fr;
@@ -1880,11 +1881,9 @@ footer {
   .services-grid {
     grid-template-columns: 1fr;
   }
-  .about-visual {
-    max-width: 440px;
-  }
   .about-frame {
-    width: 100%;
+    width: min(560px, 100%);
+    margin: 0 auto;
   }
   .hero-social-proof {
     flex-wrap: wrap;
@@ -1936,11 +1935,10 @@ footer {
   .stats-grid {
     grid-template-columns: 1fr;
   }
-  .about-visual {
-    max-width: 360px;
-  }
   .about-frame {
     aspect-ratio: 4/5;
+    width: 100%;
+    margin: 0 auto;
   }
   .hero-card {
     aspect-ratio: 1/1.2;
