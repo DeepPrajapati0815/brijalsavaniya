@@ -1880,6 +1880,12 @@ footer {
   .services-grid {
     grid-template-columns: 1fr;
   }
+  .about-visual {
+    max-width: 440px;
+  }
+  .about-frame {
+    width: 100%;
+  }
   .hero-social-proof {
     flex-wrap: wrap;
     gap: 1.25rem 1.5rem;
@@ -1893,6 +1899,11 @@ footer {
   .about-accent-box {
     right: 0.75rem;
     bottom: 0.75rem;
+    padding: 1.05rem 1.35rem;
+    border-radius: 12px;
+  }
+  .aab-num {
+    font-size: 2rem;
   }
   .content-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1925,6 +1936,12 @@ footer {
   .stats-grid {
     grid-template-columns: 1fr;
   }
+  .about-visual {
+    max-width: 360px;
+  }
+  .about-frame {
+    aspect-ratio: 4/5;
+  }
   .hero-card {
     aspect-ratio: 1/1.2;
     max-height: 440px;
@@ -1937,7 +1954,15 @@ footer {
     padding: 0.55rem 0.85rem;
   }
   .about-accent-box {
-    padding: 1.1rem 1.4rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding: 0.9rem 1.1rem;
+  }
+  .aab-num {
+    font-size: 1.75rem;
+  }
+  .aab-label {
+    font-size: 0.6rem;
   }
   .about-frame-initials {
     font-size: 6.2rem;
