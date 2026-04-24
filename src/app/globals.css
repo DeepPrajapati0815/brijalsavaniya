@@ -1859,13 +1859,17 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
   .hero-visual {
-    display: none;
+    display: block;
+    max-width: 520px;
+    margin: 0 auto;
   }
   .about-inner {
     grid-template-columns: 1fr;
   }
   .about-visual {
-    display: none;
+    display: block;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
   }
   .contact-inner {
     grid-template-columns: 1fr;
