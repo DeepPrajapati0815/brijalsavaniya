@@ -6,6 +6,8 @@ import { creator, audience, stats, services, brands } from '@/data/site';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Button } from '@/components/ui/Button';
+import { getMediaKit, getServices as getApiServices, getBrandsData, getSettings } from '@/lib/api';
+import type { MetricData, ServiceData, BrandData, CollaborationData, SettingsData } from '@/lib/api';
 
 export const metadata: Metadata = {
   title: 'Media Kit',
@@ -20,7 +22,36 @@ function formatNumber(n: number) {
   return new Intl.NumberFormat('en-US').format(Math.round(n));
 }
 
-export default function MediaKitPage() {
+export default async function MediaKitPage() {
+  const [mediaKit, apiServices, brandsData, settings] = await Promise.all([
+    getMediaKit(),
+    getApiServices(),
+    getBrandsData(),
+    getSettings(),
+  ]);
+
+  const metrics: MetricData[] = mediaKit.metrics.length > 0 ? mediaKit.metrics : [
+    { key: 'followers', label: 'Total Followers', value: '50.2K', rawValue: 50200, suffix: 'K', growthNote: '', growthPositive: true, barPercent: 82, sortOrder: 1, isVisible: true },
+    { key: 'engagement', label: 'Engagement Rate', value: '7.8%', rawValue: 7.8, suffix: '%', growthNote: '', growthPositive: true, barPercent: 78, sortOrder: 2, isVisible: true },
+    { key: 'avgReelViews', label: 'Avg Reel Views', value: '82K', rawValue: 82000, suffix: 'K', growthNote: '', growthPositive: true, barPercent: 68, sortOrder: 3, isVisible: true },
+    { key: 'avgStoryViews', label: 'Avg Story Views', value: '18K', rawValue: 18000, suffix: 'K', growthNote: '', growthPositive: true, barPercent: 72, sortOrder: 4, isVisible: true },
+  ];
+
+  const svcList: ServiceData[] = apiServices.length > 0 ? apiServices : services.map((s, i) => ({
+    _id: String(i + 1), number: String(i + 1).padStart(2, '0'), title: s.title, description: s.description,
+    features: [...s.deliverables], priceLabel: 'Starting from', priceDisplay: ['₹15,000', '₹6,000', '₹8,000', 'Custom'][i],
+    isVisible: true, sortOrder: i + 1,
+  }));
+
+  const brandList: BrandData[] = brandsData.brands.length > 0 ? brandsData.brands : brands.map((b, i) => ({
+    _id: String(i + 1), name: b.name, slug: b.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    type: '', logoEmoji: ['🌸', '💊', '👜', '🧴'][i] || '🏢', isFeatured: i === 0, isVisible: true, sortOrder: i + 1,
+  }));
+
+  const collabList: CollaborationData[] = brandsData.collaborations;
+
+  const creatorName = settings?.creator_name || creator.name;
+
   return (
     <div>
       <Navbar />
@@ -33,7 +64,7 @@ export default function MediaKitPage() {
                   Media Kit
                 </div>
                 <h1 className="mt-2 text-4xl font-semibold tracking-tight">
-                  {creator.name}
+                  {creatorName}
                 </h1>
                 <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
                   Built for brand managers who need clarity fast: performance stats, audience fit,
@@ -56,51 +87,22 @@ export default function MediaKitPage() {
                 <div className="rounded-3xl border border-zinc-200/60 bg-white/70 p-6 shadow-soft backdrop-blur dark:border-white/10 dark:bg-white/5 dark:shadow-softDark">
                   <div className="text-sm font-semibold">Performance overview</div>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
-                      <div className="text-xs text-zinc-500 dark:text-zinc-400">Followers</div>
-                      <div className="mt-1 text-2xl font-semibold">
-                        {formatNumber(stats.followers)}+
+                    {metrics.map((m) => (
+                      <div key={m.key} className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
+                        <div className="text-xs text-zinc-500 dark:text-zinc-400">{m.label}</div>
+                        <div className="mt-1 text-2xl font-semibold">{m.value}</div>
+                        {m.growthNote && <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">{m.growthNote}</div>}
                       </div>
-                      <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        Instagram
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
-                      <div className="text-xs text-zinc-500 dark:text-zinc-400">Engagement rate</div>
-                      <div className="mt-1 text-2xl font-semibold">
-                        {(stats.engagementRate * 100).toFixed(1)}%
-                      </div>
-                      <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        Avg last 30 days
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
-                      <div className="text-xs text-zinc-500 dark:text-zinc-400">Average Reel views</div>
-                      <div className="mt-1 text-2xl font-semibold">
-                        {formatNumber(stats.avgReelViews)}
-                      </div>
-                      <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        Reach-focused content
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
-                      <div className="text-xs text-zinc-500 dark:text-zinc-400">Average Story views</div>
-                      <div className="mt-1 text-2xl font-semibold">
-                        {formatNumber(stats.avgStoryViews)}
-                      </div>
-                      <div className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-                        Great for launches
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
                 <div className="mt-4 rounded-3xl border border-zinc-200/60 bg-white/70 p-6 shadow-soft backdrop-blur dark:border-white/10 dark:bg-white/5 dark:shadow-softDark">
                   <div className="text-sm font-semibold">Services</div>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    {services.map((s) => (
+                    {svcList.map((s) => (
                       <div
-                        key={s.title}
+                        key={s._id}
                         className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5"
                       >
                         <div className="text-sm font-semibold">{s.title}</div>
@@ -108,7 +110,7 @@ export default function MediaKitPage() {
                           {s.description}
                         </div>
                         <div className="mt-3 grid gap-2">
-                          {s.deliverables.map((d) => (
+                          {s.features.map((d) => (
                             <div
                               key={d}
                               className="rounded-xl border border-zinc-200/60 bg-white/70 px-3 py-2 text-xs font-semibold text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
@@ -184,36 +186,42 @@ export default function MediaKitPage() {
                     Examples of how campaigns have performed
                   </div>
                   <div className="mt-4 grid gap-3">
-                    {brands.map((b) => (
-                      <div
-                        key={b.name}
-                        className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5"
-                      >
-                        <div className="text-sm font-semibold">{b.name}</div>
-                        <div className="mt-3 grid grid-cols-3 gap-2 text-center">
-                          <div className="rounded-xl border border-zinc-200/60 bg-white/70 p-2 text-xs dark:border-white/10 dark:bg-white/5">
-                            <div className="text-zinc-500 dark:text-zinc-400">Views</div>
-                            <div className="mt-1 font-semibold">{b.result.views}</div>
-                          </div>
-                          <div className="rounded-xl border border-zinc-200/60 bg-white/70 p-2 text-xs dark:border-white/10 dark:bg-white/5">
-                            <div className="text-zinc-500 dark:text-zinc-400">Reach</div>
-                            <div className="mt-1 font-semibold">{b.result.reach}</div>
-                          </div>
-                          <div className="rounded-xl border border-zinc-200/60 bg-white/70 p-2 text-xs dark:border-white/10 dark:bg-white/5">
-                            <div className="text-zinc-500 dark:text-zinc-400">Saves</div>
-                            <div className="mt-1 font-semibold">{b.result.saves}</div>
+                    {brandList.map((b) => {
+                      const collab = collabList.find(c => c.brandId === b._id || c.brandId === b.slug);
+                      const resultViews = collab?.viewsCount ? `${(collab.viewsCount/1000).toFixed(0)}K` : (brands.find(sb => sb.name === b.name)?.result.views || '—');
+                      const resultReach = collab?.clicksCount ? `${(collab.clicksCount/1000).toFixed(1)}K` : (brands.find(sb => sb.name === b.name)?.result.reach || '—');
+                      const resultSaves = collab?.ctrPercent ? `${collab.ctrPercent}%` : (brands.find(sb => sb.name === b.name)?.result.saves || '—');
+                      return (
+                        <div
+                          key={b._id}
+                          className="rounded-2xl border border-zinc-200/60 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5"
+                        >
+                          <div className="text-sm font-semibold">{b.name}</div>
+                          <div className="mt-3 grid grid-cols-3 gap-2 text-center">
+                            <div className="rounded-xl border border-zinc-200/60 bg-white/70 p-2 text-xs dark:border-white/10 dark:bg-white/5">
+                              <div className="text-zinc-500 dark:text-zinc-400">Views</div>
+                              <div className="mt-1 font-semibold">{resultViews}</div>
+                            </div>
+                            <div className="rounded-xl border border-zinc-200/60 bg-white/70 p-2 text-xs dark:border-white/10 dark:bg-white/5">
+                              <div className="text-zinc-500 dark:text-zinc-400">Reach</div>
+                              <div className="mt-1 font-semibold">{resultReach}</div>
+                            </div>
+                            <div className="rounded-xl border border-zinc-200/60 bg-white/70 p-2 text-xs dark:border-white/10 dark:bg-white/5">
+                              <div className="text-zinc-500 dark:text-zinc-400">Saves</div>
+                              <div className="mt-1 font-semibold">{resultSaves}</div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
 
                 <div className="mt-4 rounded-3xl border border-zinc-200/60 bg-gradient-to-br from-indigo-500/10 via-fuchsia-500/5 to-rose-400/10 p-6 shadow-soft backdrop-blur dark:border-white/10 dark:from-indigo-500/15 dark:via-fuchsia-500/10 dark:to-rose-400/15 dark:shadow-softDark">
                   <div className="text-sm font-semibold">Booking notes</div>
                   <div className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
-                    To keep campaigns smooth, I confirm a timeline, creative angle, and do’s/don’ts in writing.
-                    For ad usage rights, I’ll share a clear add-on.
+                    To keep campaigns smooth, I confirm a timeline, creative angle, and do&apos;s/don&apos;ts in writing.
+                    For ad usage rights, I&apos;ll share a clear add-on.
                   </div>
                   <Button href="/#contact" className="mt-5 w-full">
                     Request pricing

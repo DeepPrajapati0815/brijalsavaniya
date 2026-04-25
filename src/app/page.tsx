@@ -1,16 +1,19 @@
 import { Navbar } from '@/components/Navbar';
-import { Hero } from '@/components/Hero';
-import { MediaKitPreview } from '@/components/MediaKitPreview';
-import { ContentShowcase } from '@/components/ContentShowcase';
-import { Brands } from '@/components/Brands';
-import { Services } from '@/components/Services';
-import { About } from '@/components/About';
-import { Contact } from '@/components/Contact';
+import { Hero } from '@/components/dynamic/Hero';
+import { MediaKitPreview } from '@/components/dynamic/MediaKitPreview';
+import { ContentShowcase } from '@/components/dynamic/ContentShowcase';
+import { Brands } from '@/components/dynamic/Brands';
+import { Services } from '@/components/dynamic/Services';
+import { About } from '@/components/dynamic/About';
+import { Contact } from '@/components/dynamic/Contact';
 import { Footer } from '@/components/Footer';
 import { ThemeEffects } from '@/components/ThemeEffects';
 import { BackToTopButton } from '@/components/BackToTopButton';
+import { getHomePageData } from '@/lib/api';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const data = await getHomePageData();
+
   return (
     <div>
       <div className="scroll-indicator">
@@ -19,19 +22,19 @@ export default function HomePage() {
       <ThemeEffects />
       <Navbar />
       <main>
-        <Hero />
+        <Hero data={data.hero} metrics={data.metrics} />
         <div className="section-divider" />
-        <MediaKitPreview />
+        <MediaKitPreview metrics={data.metrics} demographics={data.demographics} />
         <div className="section-divider" />
-        <ContentShowcase />
+        <ContentShowcase categories={data.contentCategories} items={data.contentItems} />
         <div className="section-divider" />
-        <Brands />
+        <Brands brands={data.brands} collaborations={data.collaborations} testimonials={data.testimonials} />
         <div className="section-divider" />
-        <Services />
+        <Services services={data.services} />
         <div className="section-divider" />
-        <About />
+        <About data={data.about} />
         <div className="section-divider" />
-        <Contact />
+        <Contact settings={data.settings} />
       </main>
       <Footer />
 
