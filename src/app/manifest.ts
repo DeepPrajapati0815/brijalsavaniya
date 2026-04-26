@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Brijal Savaniya — UGC Ads Creator Gujarat',
     short_name: 'Brijal Creates',
     description:
-      'Rajkot, Gujarat-based UGC ads creator specializing in lifestyle & fashion content with 50K+ Instagram followers. View media kit, services, and collaboration options.',
+      'Rajkot, Gujarat-based UGC ads creator specializing in lifestyle, fashion, food & makeup content with 50K+ Instagram followers. View media kit, services, and collaboration options.',
     start_url: '/',
     display: 'standalone',
     theme_color: '#c9a84c',
@@ -13,6 +13,12 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: 'portrait-primary',
     lang: 'en-IN',
     icons: [
+      {
+        src: '/icon.svg',
+        sizes: 'any',
+        type: 'image/svg+xml',
+        purpose: 'any',
+      },
       {
         src: '/icons/icon-192x192.png',
         sizes: '192x192',

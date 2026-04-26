@@ -183,7 +183,7 @@ export function MediaKitPreview() {
                   Other — 4%
                 </div>
                 <div style={{ marginTop: '0.75rem', fontSize: '0.72rem', color: 'var(--muted)', lineHeight: 1.5 }}>
-                  Core audience: fashion-forward young women aged 18–34 in metro cities
+                  Core audience: fashion-forward young women aged 18–34 across Gujarat & India
                 </div>
               </div>
             </div>
@@ -193,7 +193,7 @@ export function MediaKitPreview() {
             <h4>Top Cities</h4>
             <div className="cities-list">
               <div className="city-row">
-                <span className="city-name">Mumbai</span>
+                <span className="city-name">Rajkot</span>
                 <div className="city-bar">
                   <div className="city-bar-fill" data-width="80" />
                 </div>

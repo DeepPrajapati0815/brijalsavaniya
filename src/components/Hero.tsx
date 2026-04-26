@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { creator } from '@/data/site';
 
-const niches = ['Savaniya', 'Lifestyle Creator', 'Fashion Influencer', 'Fitness Coach'];
+const niches = ['Savaniya', 'Lifestyle Creator', 'Fashion Influencer', 'Food Creator', 'Makeup Creator'];
 
 export function Hero() {
   useEffect(() => {

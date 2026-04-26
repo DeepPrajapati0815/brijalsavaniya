@@ -53,7 +53,7 @@ export function Contact() {
                 </div>
                 <div>
                   <div className="ci-label">Based in</div>
-                  <div className="ci-val">Mumbai, India · Available Worldwide</div>
+                  <div className="ci-val">Rajkot, Gujarat, India · Available Worldwide</div>
                 </div>
               </div>
             </div>

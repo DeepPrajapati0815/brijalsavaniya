@@ -21,9 +21,9 @@ const defaultValues = [
 export function About({ data }: AboutProps) {
   const about = data;
   const paragraphs = about?.storyParagraphs || [
-    `Hey, I'm Brijal Savaniya — a lifestyle and fashion content creator from Gujarat, currently based in Mumbai. What started as a creative outlet in 2020 has grown into a community of over 50,000 real, engaged people who trust my recommendations, style choices, and wellness journey.`,
-    `I believe content should feel authentic, not scripted. My feed is a reflection of how I actually live — from morning workouts and skincare routines to outfit-of-the-day reels and honest product reviews. This is why my audience converts at 3× the industry average.`,
-    `I've had the privilege of working with 25+ brands across fashion, beauty, fitness, and lifestyle. I'm selective about collaborations because my audience's trust is everything to me. If you're here, I'm already considering you a good fit.`,
+    `Hey, I'm Brijal Savaniya — a UGC ads creator from Rajkot, Gujarat, specializing in lifestyle, fashion, food, and makeup content. What started as a creative outlet in 2020 has grown into a community of over 50,000 real, engaged people who trust my recommendations, style choices, and product picks.`,
+    `I believe UGC should feel authentic, not scripted. My content is a reflection of how I actually live — from morning routines and outfit reels to easy food content and clean makeup looks. This is why my audience converts at 3× the industry average.`,
+    `I've had the privilege of working with 25+ brands across lifestyle, fashion, food, and makeup. I'm selective about collaborations because my audience's trust is everything to me. If you're here, I'm already considering you a good fit.`,
   ];
   const values = about?.valuesCards || defaultValues;
 

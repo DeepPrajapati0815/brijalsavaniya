@@ -11,11 +11,11 @@ export function ContentShowcase() {
       badge: 'TRENDING',
     },
     {
-      categories: 'fitness reels',
+      categories: 'food reels',
       permalink: 'https://www.instagram.com/reel/DWT2VWUD_gW/',
       bgClass: 'g2',
-      icon: '💪',
-      type: '🎬 Reel · Fitness',
+      icon: '🍳',
+      type: '🎬 Reel · Food',
       views: '215K',
       viewsLabel: 'views',
     },
@@ -38,11 +38,11 @@ export function ContentShowcase() {
       viewsLabel: 'views',
     },
     {
-      categories: 'lifestyle fitness',
+      categories: 'lifestyle makeup',
       permalink: 'https://www.instagram.com/reel/DWJp_o2FSPh/',
       bgClass: 'g5',
-      icon: '🌿',
-      type: '📸 Carousel · Wellness',
+      icon: '💄',
+      type: '📸 Carousel · Makeup',
       views: '62K',
       viewsLabel: 'reach',
     },
@@ -82,8 +82,11 @@ export function ContentShowcase() {
           <button className="filter-btn" data-filter="fashion">
             Fashion
           </button>
-          <button className="filter-btn" data-filter="fitness">
-            Fitness
+          <button className="filter-btn" data-filter="food">
+            Food
+          </button>
+          <button className="filter-btn" data-filter="makeup">
+            Makeup
           </button>
           <button className="filter-btn" data-filter="lifestyle">
             Lifestyle

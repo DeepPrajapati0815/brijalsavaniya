@@ -33,6 +33,11 @@ export const metadata: Metadata = {
   },
   description:
     'Rajkot Gujarat UGC ads creator with 50K+ Instagram followers & 7.8% engagement. Lifestyle, fashion, food & makeup UGC content for Indian D2C brands. Partner with Brijal today.',
+  icons: {
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    shortcut: ['/icon.svg'],
+    apple: '/apple-icon',
+  },
   keywords: [
     'Brijal Savaniya',
     'UGC ads creator India',

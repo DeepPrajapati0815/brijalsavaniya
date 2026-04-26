@@ -73,9 +73,9 @@ export function Brands() {
               </div>
             </div>
             <div className="brand-name">WellBeing Nutrition</div>
-            <div className="brand-type">Health &amp; Fitness</div>
+            <div className="brand-type">Food &amp; Lifestyle</div>
             <div style={{ fontSize: '0.78rem', color: 'var(--muted)', lineHeight: 1.6 }}>
-              Month-long ambassador campaign featuring product reviews and daily fitness routines.
+              Month-long ambassador campaign featuring product reviews and daily lifestyle content.
             </div>
             <div className="campaign-stat">
               <div className="cs-item">

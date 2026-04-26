@@ -23,7 +23,7 @@ export default function MediaKitPrintPage() {
               <div className="text-xs font-semibold text-zinc-500">MEDIA KIT</div>
               <div className="mt-2 text-3xl font-semibold">{creator.name}</div>
               <div className="mt-2 text-sm text-zinc-600">
-                Instagram Creator • Lifestyle • Fashion • Fitness
+                Instagram Creator • Lifestyle • Fashion • Food • Makeup
               </div>
             </div>
             <div className="text-right text-sm text-zinc-600">

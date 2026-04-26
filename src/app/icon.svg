@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="120" fill="#0d0d0d"/>
+  <text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-family="ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif" font-size="250" font-weight="600" fill="#f5f0e8">B</text>
+  <circle cx="350" cy="320" r="22" fill="#c9a84c"/>
+</svg>

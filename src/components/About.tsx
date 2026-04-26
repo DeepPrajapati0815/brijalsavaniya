@@ -7,7 +7,7 @@ export function About() {
             <div className="about-frame">
               <img
                 src="/about_profile.jpg"
-                alt="Brijal Savaniya"
+                alt="Brijal Savaniya UGC ads creator Rajkot Gujarat lifestyle fashion profile photo"
                 style={{
                   position: 'absolute',
                   inset: 0,
@@ -39,19 +39,19 @@ export function About() {
             </h2>
 
             <p className="about-story">
-              Hey, I'm <strong>Brijal Savaniya</strong> — a lifestyle and fashion content creator from Gujarat, currently based in Mumbai.
+              Hey, I'm <strong>Brijal Savaniya</strong> — a UGC ads creator from <strong>Rajkot, Gujarat</strong>, specializing in lifestyle, fashion, food, and makeup content.
               What started as a creative outlet in 2020 has grown into a community of over <strong>50,000 real, engaged people</strong> who
-              trust my recommendations, style choices, and wellness journey.
+              trust my recommendations, style choices, and product picks.
             </p>
 
             <p className="about-story" style={{ marginTop: '1rem' }}>
-              I believe content should feel <strong>authentic, not scripted</strong>. My feed is a reflection of how I actually live — from
-              morning workouts and skincare routines to outfit-of-the-day reels and honest product reviews. This is why my audience{' '}
+              I believe UGC should feel <strong>authentic, not scripted</strong>. My content is a reflection of how I actually live — from
+              morning routines and outfit reels to easy food content and clean makeup looks. This is why my audience{' '}
               <strong>converts at 3× the industry average</strong>.
             </p>
 
             <p className="about-story" style={{ marginTop: '1rem' }}>
-              I've had the privilege of working with <strong>25+ brands</strong> across fashion, beauty, fitness, and lifestyle. I'm selective
+              I've had the privilege of working with <strong>25+ brands</strong> across lifestyle, fashion, food, and makeup. I'm selective
               about collaborations because my audience's trust is everything to me. If you're here, I'm already considering you a good fit.
             </p>
 

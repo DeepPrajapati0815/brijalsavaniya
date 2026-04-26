@@ -6,7 +6,7 @@ export function Footer() {
           <a href="#" className="nav-logo" style={{ fontSize: '1.6rem' }}>
             Brijal<span style={{ color: 'var(--gold)' }}>.</span>
           </a>
-          <p>Lifestyle · Fashion · Fitness creator based in Mumbai. Building authentic brand partnerships that convert.</p>
+          <p>UGC ads creator based in Rajkot, Gujarat. Lifestyle · Fashion · Food · Makeup content for brands that convert.</p>
           <div className="footer-socials">
             <a href="https://www.instagram.com/brijalsavaniya" className="social-link" title="Instagram" target="_blank" rel="noreferrer">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -102,7 +102,7 @@ export function Footer() {
 
       <div className="footer-bottom">
         <p>© 2025 Brijal Savaniya. All rights reserved.</p>
-        <p style={{ color: 'rgba(122,117,104,0.5)', fontSize: '0.7rem' }}>Crafted with intention · Mumbai, India</p>
+        <p style={{ color: 'rgba(122,117,104,0.5)', fontSize: '0.7rem' }}>Crafted with intention · Rajkot, Gujarat, India</p>
       </div>
     </footer>
   );
