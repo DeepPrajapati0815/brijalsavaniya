@@ -9,6 +9,7 @@ import { Contact } from '@/components/dynamic/Contact';
 import { Footer } from '@/components/Footer';
 import { ThemeEffects } from '@/components/ThemeEffects';
 import { BackToTopButton } from '@/components/BackToTopButton';
+import { SEOJsonLd } from '@/components/SEOJsonLd';
 import { getHomePageData } from '@/lib/api';
 
 export default async function HomePage() {
@@ -20,6 +21,7 @@ export default async function HomePage() {
         <div className="scroll-progress" id="scrollBar" />
       </div>
       <ThemeEffects />
+      <SEOJsonLd />
       <Navbar />
       <main>
         <Hero data={data.hero} metrics={data.metrics} />

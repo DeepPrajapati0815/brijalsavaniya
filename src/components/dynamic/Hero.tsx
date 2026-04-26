@@ -153,7 +153,7 @@ export function Hero({ data, metrics }: HeroProps) {
                 />
                 <img
                   src={hero.heroImageUrl || '/hero_profile.jpg'}
-                  alt="Brijal Savaniya"
+                  alt="Brijal Savaniya Rajkot Gujarat UGC ads lifestyle fashion creator 50K followers"
                   style={{
                     position: 'absolute',
                     inset: 0,
@@ -209,7 +209,7 @@ export function Hero({ data, metrics }: HeroProps) {
                   color: 'var(--cream)',
                 }}
               >
-                <span className="gold">@brijalsavaniya · 50K followers</span>
+                <span className="gold">@brijalsavaniya · 50K+ Instagram followers · Gujarat</span>
               </div>
             </div>
           </div>

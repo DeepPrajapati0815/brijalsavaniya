@@ -44,11 +44,11 @@ export function Brands({ brands, collaborations, testimonials }: BrandsProps) {
             Trusted By
             <br />
             <em className="serif-italic" style={{ color: 'var(--gold)' }}>
-              Top Brands
+              Lifestyle & Fashion Brands
             </em>
           </h2>
           <p className="section-sub">
-            Delivering measurable results for brands across fashion, wellness, beauty, and lifestyle industries.
+            Delivering measurable results for lifestyle and fashion brands across India through authentic UGC ad content.
           </p>
         </div>
 

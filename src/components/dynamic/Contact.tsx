@@ -14,7 +14,7 @@ export function Contact({ settings }: ContactProps) {
 
   const emailSetting = settings?.primary_email || 'brijal@brijalcreates.com';
   const whatsapp = settings?.whatsapp_number || '+91 98765 43210';
-  const location = settings?.creator_location || 'Mumbai, India · Available Worldwide';
+  const location = settings?.creator_location || 'Rajkot, Gujarat, India · Available Worldwide';
   const waLink = `https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}?text=Hi%20Brijal!%20I'd%20love%20to%20collaborate%20with%20you.`;
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -57,14 +57,14 @@ export function Contact({ settings }: ContactProps) {
           <div className="contact-left reveal">
             <div className="section-label">Let&apos;s Collaborate</div>
             <h2 className="section-title">
-              Start a
+              Start a Brand
               <br />
               <em className="serif-italic" style={{ color: 'var(--gold)' }}>
-                Campaign
+                Collaboration Campaign
               </em>
             </h2>
             <p className="section-sub" style={{ marginTop: '1rem' }}>
-              Have a brand or product you&apos;d like to put in front of a highly engaged audience? I&apos;d love to hear about it.
+              Have a lifestyle, fashion, food, or makeup brand you&apos;d like to put in front of a highly engaged 50K+ audience? I&apos;d love to hear about it.
             </p>
 
             <div className="contact-info-items">

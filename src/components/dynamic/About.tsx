@@ -35,7 +35,7 @@ export function About({ data }: AboutProps) {
             <div className="about-frame">
               <img
                 src={about?.profileImageUrl || '/about_profile.jpg'}
-                alt="Brijal Savaniya"
+                alt="Brijal Savaniya UGC ads creator Rajkot Gujarat lifestyle fashion profile photo"
                 style={{
                   position: 'absolute',
                   inset: 0,
@@ -59,7 +59,7 @@ export function About({ data }: AboutProps) {
           <div className="about-text reveal">
             <div className="section-label">{about?.sectionLabel || 'About Me'}</div>
             <h2 className="section-title">
-              The Person
+              About
               <br />
               <em className="serif-italic" style={{ color: 'var(--gold)' }}>
                 {about?.headline || 'Behind the Feed'}

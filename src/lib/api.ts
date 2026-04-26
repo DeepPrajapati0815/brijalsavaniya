@@ -237,9 +237,9 @@ export function getStaticHero(): HeroData {
   return {
     headline: creator.headline,
     subheadline: creator.followersHeadline,
-    typedNiches: ['Savaniya', ...creator.nicheRotator, 'Beauty'],
-    nichePills: [...creator.nicheRotator, 'Beauty'].map((label, i) => ({ label, sortOrder: i, isVisible: true })),
-    tagline: `Creating authentic, high-impact content that resonates with a highly engaged audience of 50,000+ followers across Instagram. Turning brand stories into viral moments.`,
+    typedNiches: ['Savaniya', ...creator.nicheRotator],
+    nichePills: [...creator.nicheRotator].map((label, i) => ({ label, sortOrder: i, isVisible: true })),
+    tagline: `Rajkot, Gujarat-based UGC ads creator specializing in lifestyle, fashion, food, and makeup content with 50K+ Instagram followers. Delivering high-converting UGC ads that turn brand stories into sales.`,
     badgeText: 'Available for Collaborations',
     ctaPrimaryText: 'Work With Me',
     ctaPrimaryHref: '#contact',
@@ -260,11 +260,11 @@ export function getStaticMetrics(): MetricData[] {
 
 export function getStaticDemographics(): DemographicData[] {
   return [
-    { _id: '1', type: 'city', label: 'Mumbai', percentage: 28, sortOrder: 1, isVisible: true },
-    { _id: '2', type: 'city', label: 'Delhi', percentage: 19, sortOrder: 2, isVisible: true },
-    { _id: '3', type: 'city', label: 'Bangalore', percentage: 14, sortOrder: 3, isVisible: true },
-    { _id: '4', type: 'city', label: 'Ahmedabad', percentage: 11, sortOrder: 4, isVisible: true },
-    { _id: '5', type: 'city', label: 'Others', percentage: 28, sortOrder: 5, isVisible: true },
+    { _id: '1', type: 'city', label: 'Rajkot', percentage: 22, sortOrder: 1, isVisible: true },
+    { _id: '2', type: 'city', label: 'Ahmedabad', percentage: 18, sortOrder: 2, isVisible: true },
+    { _id: '3', type: 'city', label: 'Mumbai', percentage: 15, sortOrder: 3, isVisible: true },
+    { _id: '4', type: 'city', label: 'Delhi', percentage: 12, sortOrder: 4, isVisible: true },
+    { _id: '5', type: 'city', label: 'Others', percentage: 33, sortOrder: 5, isVisible: true },
   ];
 }
 

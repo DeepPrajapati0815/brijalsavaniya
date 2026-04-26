@@ -16,14 +16,14 @@ export function MediaKitPreview({ metrics, demographics }: MediaKitPreviewProps)
         <div className="reveal">
           <div className="section-label">Media Kit</div>
           <h2 className="section-title">
-            Audience Analytics
+            UGC Creator Media Kit
             <br />
             <em className="serif-italic" style={{ color: 'var(--gold)' }}>
-              &amp; Performance
+              &amp; Audience Analytics
             </em>
           </h2>
           <p className="section-sub">
-            Real data. Real engagement. Here&apos;s exactly who I reach and how deeply my content resonates.
+            Real data. Real engagement. Here&apos;s exactly who I reach and how deeply my UGC ad content resonates with India&apos;s fashion-forward audience.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export function MediaKitPreview({ metrics, demographics }: MediaKitPreviewProps)
                   Other — 4%
                 </div>
                 <div style={{ marginTop: '0.75rem', fontSize: '0.72rem', color: 'var(--muted)', lineHeight: 1.5 }}>
-                  Core audience: fashion-forward young women aged 18–34 in metro cities
+                  Core audience: fashion-forward young women aged 18–34 across Gujarat & India
                 </div>
               </div>
             </div>

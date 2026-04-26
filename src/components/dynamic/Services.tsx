@@ -21,14 +21,14 @@ export function Services({ services }: ServicesProps) {
         <div className="reveal">
           <div className="section-label">Services</div>
           <h2 className="section-title">
-            What I Offer
+            UGC Ads & Content
             <br />
             <em className="serif-italic" style={{ color: 'var(--gold)' }}>
-              Brands
+              for Lifestyle, Fashion, Food & Makeup Brands
             </em>
           </h2>
           <p className="section-sub">
-            Every collaboration is crafted with intention, creativity, and a laser focus on your campaign goals.
+            Every collaboration is crafted with intention, creativity, and a laser focus on your campaign goals. From UGC ads to reel promotions — tailored for Indian D2C brands.
           </p>
         </div>
 
